@@ -1,0 +1,14 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  gap: 2rem;
+
+  .search-wrapper {
+    margin: 1rem auto 2rem;
+    width: 100%;
+    max-width: 800px;
+  }
+}

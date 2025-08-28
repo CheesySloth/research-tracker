@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface NoteRepository extends JpaRepository<Note, Long> {
-    List<Note> findByAuthor(String author);
+    List<Note> findByAuthorContaining(String author);
 
     List<Note> findByTitle(String title);
 
@@ -26,6 +26,6 @@ public interface NoteRepository extends JpaRepository<Note, Long> {
 
     List<Note> findByAuthorAndTitle(String author, String title);
 
-    List<Note> findByAuthorAndCategoryAndTagsContainingAndTitleContainingAndContentContaining(
+    List<Note> findByAuthorContainingAndCategoryContainingAndTagsContainingAndTitleContainingAndContentContaining(
             String author, String category, String tag, String title, String content);
 }
