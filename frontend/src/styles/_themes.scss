@@ -1,0 +1,52 @@
+
+// 1. "Midnight Blossom" (Dark Pink)
+[data-theme="midnight-blossom"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #f0f0f0;
+  --text-secondary: #cccccc;
+  --accent: #f9a2b6;
+  --accent-dark: #e67f99;
+  --border: #3d3d3d;
+  --input-bg: #292929; // lighter than bg-primary
+  --input-text: #e1e2e3;
+}
+
+// 2. "Pink Mist" (Light Pink)
+[data-theme="pink-mist"] {
+  --bg-primary: #f9f4f6;
+  --bg-secondary: #e8e1e5;
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --accent: #e2b4bd;
+  --accent-dark: #d19aa5;
+  --border: #d3d3d3;
+  --input-bg: #f3f3f3; // light gray for text boxes
+  --input-text: #333333;
+}
+
+// 3. "Ocean Horizon" (Corporate Light)
+[data-theme="ocean-horizon"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #c1d0e3;
+  --text-primary: #1e293b;
+  --text-secondary: #334155;
+  --accent: #60a5fa;
+  --accent-dark: #3b82f6;
+  --border: #cbd5e1;
+  --input-bg: #e4e8ee; // slightly darker than bg-secondary
+  --input-text: #1e293b;
+}
+
+// 4. "Deep Ocean" (Corporate Dark)
+[data-theme="deep-ocean"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --accent: #38bdf8;
+  --accent-dark: #0ea5e9;
+  --border: #334155;
+  --input-bg: #49596e; // lighter than bg-primary
+  --input-text: #f8fafc;
+}

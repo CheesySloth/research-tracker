@@ -1,0 +1,30 @@
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: 500;
+
+  &:hover {
+    background: var(--accent-dark);
+  }
+
+  &.secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+
+    &:hover {
+      background: rgba(0,0,0,0.05);
+    }
+  }
+}
+
+.note-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}

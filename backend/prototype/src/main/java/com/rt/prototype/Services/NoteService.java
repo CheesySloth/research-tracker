@@ -1,11 +1,13 @@
 package com.rt.prototype.Services;
 
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.rt.prototype.Entities.Note;
 import com.rt.prototype.Repositories.NoteRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NoteService {
@@ -53,8 +55,8 @@ public class NoteService {
 
     // --- Search methods (examples) ---
 
-    public List<Note> findByAuthor(String author) {
-        return noteRepository.findByAuthor(author);
+    public List<Note> findByAuthorContaining(String author) {
+        return noteRepository.findByAuthorContaining(author);
     }
 
     public List<Note> findByTitleContaining(String title) {
@@ -75,8 +77,31 @@ public class NoteService {
 
     // Example of a more complex search
     public List<Note> findByAuthorAndCategoryAndTagsAndTitleAndContent(
-            String author, String category, String tag, String title, String content) {
-        return noteRepository.findByAuthorAndCategoryAndTagsContainingAndTitleContainingAndContentContaining(
-                author, category, tag, title, content);
+            Optional<String> author,
+            Optional<String> category,
+            Optional<String> tag,
+            Optional<String> title,
+            Optional<String> content) {
+
+        // Convert Optionals to nullable Strings with proper handling
+        String authorValue = author.orElse("");
+        String categoryValue = category.orElse("");
+        String tagValue = tag.orElse("");
+        String titleValue = title.orElse("");
+        String contentValue = content.orElse("");
+        System.out.println("Searching with parameters:");
+        System.out.println("Author: " + authorValue);
+        System.out.println("Category: " + categoryValue);
+        System.out.println("Tag: " + tagValue);
+        System.out.println("Title: " + titleValue);
+        System.out.println("Content: " + contentValue);
+
+        return noteRepository
+                .findByAuthorContainingAndCategoryContainingAndTagsContainingAndTitleContainingAndContentContaining(
+                        authorValue,
+                        categoryValue,
+                        tagValue,
+                        titleValue,
+                        contentValue);
     }
 }

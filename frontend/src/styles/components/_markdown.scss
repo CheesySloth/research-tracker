@@ -1,0 +1,33 @@
+.markdown-preview {
+  padding: 1.5rem;
+  background: var(--input-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  line-height: 1.6;
+
+  h1, h2, h3 {
+    color: var(--accent);
+    margin: 1rem 0;
+  }
+
+  pre {
+    background: rgba(0,0,0,0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  code {
+    font-family: 'Fira Code', monospace;
+  }
+
+  a {
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 768px) {
+  .markdown-preview {
+    padding: 1rem;
+  }
+}
